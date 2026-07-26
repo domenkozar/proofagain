@@ -262,6 +262,29 @@ An open protocol needs more than a published document. It should include:
 
 Conformance should describe what was tested. It must not imply that a provider's identity decisions or operations are universally trustworthy.
 
+## Future AI-principal profile
+
+The initial protocol binds recovery objects to natural people. A future AI identity product should extend the subject model deliberately rather than pretending an agent has a government identity.
+
+An AI-principal profile may contain:
+
+```text
+principal_type
+principal_id
+controller_organization
+human_sponsor_references
+agent_or_workload_public_key
+software_and_model_provenance
+runtime_attestations
+delegation_chain
+capability_policy_digest
+status_and_expiration
+```
+
+Recovery should normally authorize reissuance to a replacement agent identity rather than export an old private key. The request can require current organizational authority, human approval, a fresh workload key, signed provenance, a waiting or investigation policy, and a provider quorum.
+
+This profile creates a shared architectural vocabulary for human, organization, workload, and agent continuity while keeping their proof methods separate. A person proves continuity through high-assurance identity evidence. An agent proves continuity through cryptographic provenance, delegation, workload evidence, and accountable human or organizational control.
+
 ## Governance direction
 
 The commercial company can develop the first implementation, but long-term adoption may benefit from:

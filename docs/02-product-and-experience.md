@@ -165,6 +165,7 @@ No tier should rely on a national identifier, email, telephone number, knowledge
 - automatic approval of high-risk cases;
 - succession and inheritance;
 - open enrollment by unsupported third-party clients;
+- AI-agent identity, delegation, or credential reissuance;
 - claims of zero trust or guaranteed identity;
 - recovery without a waiting period; and
 - a marketplace of providers before the core ceremony is proven.

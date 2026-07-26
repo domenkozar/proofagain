@@ -165,6 +165,71 @@ The highest-leverage distribution points are:
 
 Generic advertising is less compelling because catastrophic loss is rare and easy to postpone. The issuer can explain the risk at the exact moment a recoverable object exists.
 
+## Founder-led developer distribution
+
+Domen Kožar and Cachix would own the initial marketing motion. This is intended to be technical, product-led, and trust-building rather than a broad consumer campaign:
+
+- publish the threat model and build the products in the open;
+- teach developers how strong authentication creates a recovery responsibility;
+- demonstrate complete enrollment, factor-loss, replacement, and catastrophic-recovery ceremonies;
+- integrate the tools into workflows developers already use;
+- invite security review and respond publicly to limitations;
+- use Cachix, devenv, Nix, open-source, conference, and partner channels; and
+- turn scheduled recovery drills into evidence rather than selling fear.
+
+Cachix contributes an existing company, operating history, and developer audience. Domen contributes a recognizable technical founder voice and the ability to explain the system directly. Neither substitutes for independent security review, identity operations, or distribution beyond the current ecosystem; they make the first developer cohort more reachable and credible.
+
+## SecretSpec as the daily product
+
+The strategic ambition is to make [SecretSpec](https://secretspec.dev/) the best secrets tool for developers. “Best” should be earned through a clear product standard:
+
+- declare secret requirements once without committing values;
+- resolve them from local, password-manager, cloud, or enterprise providers;
+- preserve the same contract across development, CI, and production;
+- offer excellent SDKs and command-line ergonomics;
+- make provider migration routine;
+- expose least-privilege policy and useful lifecycle status;
+- audit which human or AI agent accessed which secret and why; and
+- integrate secure local storage and catastrophic recovery without forcing either one.
+
+SecretSpec should remain provider-independent. ProofAgain benefits from being one compatible recovery option, not from turning SecretSpec into a captive funnel. Developer trust and protocol adoption are stronger if users can choose storage and recovery providers.
+
+SecretSpec gives the ecosystem a frequent-use surface. Developers may never invoke ProofAgain, but they resolve secrets continually. That daily value creates adoption, feedback, and a natural moment to identify credentials whose loss would be catastrophic.
+
+## FactorSeal as the security habit
+
+[FactorSeal](https://github.com/domenkozar/factorseal) is the proposed secure local provider behind SecretSpec. Its target model requires:
+
+- platform hardware such as a TPM or Secure Enclave;
+- one enrolled authenticator for an ordinary unlock; and
+- at least two independently enrolled authenticators so one can be lost without destroying access.
+
+This is more precise than saying only that it “requires 2FA.” It combines two factors for use and requires authenticator redundancy for recovery. The target design refuses removal that would leave the user without a backup authenticator.
+
+FactorSeal can popularize good recovery hygiene among developers by making multiple authenticators, factor health, replacement, and recovery drills part of the normal local-secret workflow. ProofAgain does not replace this redundancy. It covers a different failure boundary: the user has lost the platform and every enrolled authenticator, or a disaster has destroyed all local recovery paths.
+
+At the time of this proposal, FactorSeal is an unaudited prototype and its current version does not yet enforce the complete target enrollment policy. Marketing must preserve that distinction until implementation and independent review support stronger claims.
+
+## Three-product adoption flywheel
+
+| Layer | Product | User value | Business role |
+| --- | --- | --- | --- |
+| Declare and access | SecretSpec | One portable secret contract across tools and environments | Daily adoption and integration surface |
+| Store and unlock locally | FactorSeal | Hardware-bound local secrets with backup-ready multifactor protection | Makes strong authentication and factor lifecycle tangible |
+| Recover after total loss | ProofAgain | Identity-gated, delayed, auditable catastrophic recovery | Recurring protection and high-assurance infrastructure |
+
+The intended funnel is:
+
+1. a developer adopts SecretSpec for immediate workflow value;
+2. SecretSpec recommends FactorSeal when a hardware-bound local provider is appropriate;
+3. FactorSeal enrollment requires backup-ready authenticator hygiene;
+4. the product explains the residual all-factors-lost scenario;
+5. the developer voluntarily enrolls a narrow ProofAgain recovery object;
+6. periodic status checks and drills verify that every layer still works; and
+7. successful open-source use becomes evidence for partner and enterprise sales.
+
+ProofAgain enrollment should be explicit, comprehensible, and optional. It should not be bundled through a dark pattern or presented as necessary for FactorSeal to function.
+
 ## Partner strategy
 
 ProofAgain likely depends on partners for:
@@ -221,6 +286,30 @@ Potential defensible assets include:
 - user trust built through transparent continuity and incident handling.
 
 The protocol should be open enough for portability. Commercial defensibility should come from reliable implementation and network trust, not trapping users' recovery material.
+
+## Expansion into AI identity
+
+Identity management for AI agents is likely to become a large infrastructure category. An autonomous agent may use many secrets, operate across machines, create sub-agents, act for a person or organization, and persist longer than one runtime. Secret storage alone cannot answer:
+
+- Which agent or agent version is acting?
+- Who created, owns, and remains accountable for it?
+- Which human or organization delegated its authority?
+- Which secrets and actions are within scope?
+- Why did it request access?
+- Can its authority survive a legitimate runtime loss without enabling a clone?
+- How is it suspended, rotated, transferred, or terminated?
+
+SecretSpec already provides the natural policy surface: a declared set of secret requirements plus access reason and audit. FactorSeal can protect local agent credentials. ProofAgain can eventually provide high-assurance continuity and reissuance when an agent runtime, device, or credential is lost.
+
+The safer recovery object is not a raw, indefinitely valid agent private key. It is a narrow authorization to register a replacement agent identity, restore a signed capability manifest, or reissue time-limited credentials after human or organizational approval. This mirrors the proposed passkey model.
+
+AI-agent identity must use a separate profile from natural-person identity:
+
+- humans are linked through stable person references and current identity proof;
+- organizations are linked through current governance and authorized representatives;
+- agents and workloads are linked through cryptographic keys, signed provenance, runtime or workload attestations, and delegation chains.
+
+The commercial expansion could include agent identity registry, delegated capability policy, secret-access audit, emergency suspension, credential rotation, multi-party reissuance, and cross-provider continuity. These capabilities would serve AI development platforms and enterprises while reusing ProofAgain's protocol, policy, quorum, audit, and continuity investments.
 
 ## Success metrics
 

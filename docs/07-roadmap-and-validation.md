@@ -216,6 +216,8 @@ Open governance should follow interoperable implementation experience. Publishin
 - Obtain baseline lockout volume, exception path, support time, and churn evidence where available.
 - Select one recovery object and write its exact authority and rotation behavior.
 - Test enrollment positioning and pricing structure.
+- Interview SecretSpec and Cachix users about local secret storage, authenticator loss, and willingness to run recovery drills.
+- Define the founder-led content and demonstration plan for Domen and Cachix.
 
 ### Security and product
 
@@ -224,6 +226,17 @@ Open governance should follow interoperable implementation experience. Publishin
 - Define object, receipt, request, approval, and release messages.
 - Test inventory discovery without enrollment enumeration.
 - Review accessibility and contested-identity flows.
+- Specify the proposed SecretSpec–FactorSeal–ProofAgain boundaries without coupling their security guarantees.
+- Document the gap between FactorSeal's current prototype and its target mandatory backup-ready multifactor design.
+
+### Ecosystem and future expansion
+
+- Define what “best secrets tool for developers” means in measurable SecretSpec adoption, reliability, provider, SDK, policy, and audit outcomes.
+- Prototype a FactorSeal provider workflow for SecretSpec and a synthetic ProofAgain catastrophe path.
+- Publish one end-to-end developer recovery ceremony and collect security feedback.
+- Define an AI-agent principal model covering controller, delegation, provenance, scope, revocation, and reissuance.
+- Interview AI platform and enterprise security teams about agent identity and lost-runtime recovery.
+- Keep AI-agent experiments isolated from the natural-person MVP until their authority and threat models are independently reviewed.
 
 ### Operations and legal
 
@@ -256,6 +269,8 @@ Open governance should follow interoperable implementation experience. Publishin
 | Unit economics work | Run scheduled manual ceremonies and cost every step | Contribution remains viable at validated price | Review cost or exception rate dominates revenue |
 | One-provider pilot has value | Compare with current partner recovery | Safer, more consistent workflow and lower burden | Merely duplicates support while adding a central failure |
 | Threshold providers are independent | Dependency audit and outage/collusion exercises | Quorum survives one failure without shared decision path | Common vendor or operator defeats independence |
+| Developer ecosystem lowers acquisition cost | Offer the integrated story to SecretSpec, Cachix, and FactorSeal users | Organic adoption produces completed recovery drills and partner interest | Awareness does not convert into protected objects |
+| AI identity is a real adjacency | Interview buyers and prototype narrow agent reissuance | Teams have budget and reject raw-key copying in favor of governed reissuance | Use cases are generic IAM or secret storage with no ProofAgain advantage |
 
 ## Decision log
 

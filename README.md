@@ -23,6 +23,7 @@ The documents are ordered for a first read, but each can stand on its own.
 | [06 — Business model and go-to-market](docs/06-business-model-and-go-to-market.md) | Customers, pricing hypotheses, distribution, economics, and metrics | Founders, investors, sales |
 | [07 — Roadmap and validation plan](docs/07-roadmap-and-validation.md) | Staged execution plan, experiments, decision gates, and team needs | Founders, operators |
 | [08 — Risks, compliance, and continuity](docs/08-risks-compliance-continuity.md) | Principal risks, regulatory workstreams, governance, and provider exit planning | Founders, legal, risk, investors |
+| [09 — Developer ecosystem and AI identity](docs/09-developer-ecosystem-and-ai-identity.md) | Founder-led distribution through SecretSpec and FactorSeal, followed by AI identity expansion | Founders, developer relations, investors |
 
 ## Core thesis
 
@@ -61,6 +62,18 @@ The proposed initial scope is:
 - small encrypted emergency documents.
 
 The initial scope explicitly excludes cryptocurrency seed custody, unrestricted private-key custody, large-file backup, everyday authentication, and recovery based only on knowledge of personal data.
+
+## Strategic distribution
+
+[Domen Kožar](https://github.com/domenkozar) and [Cachix](https://www.cachix.org/) would lead founder-driven marketing to developers. The strategy is to make [SecretSpec](https://secretspec.dev/) the best secrets tool for developers, use [FactorSeal](https://github.com/domenkozar/factorseal) to make backup-ready multifactor protection a normal part of local secret management, and introduce ProofAgain as the catastrophic recovery layer when every enrolled authenticator is gone.
+
+The three products address different layers:
+
+- **SecretSpec:** the portable declaration, resolution, policy, and audit layer for developer and AI-agent secrets;
+- **FactorSeal:** the hardware-bound local storage and multifactor-unlock layer; and
+- **ProofAgain:** the identity-gated last resort after normal authenticators and backups fail.
+
+This developer wedge can later expand into AI identity infrastructure. AI agents need stable identities, named human or organizational controllers, narrowly delegated authority, secret-access policy, audit, revocation, rotation, and safe reissuance after a runtime or credential is lost. That future profile must remain distinct from natural-person identity proofing: an AI agent is identified by cryptographic provenance and delegated authority, not by a government identifier.
 
 ## Status
 

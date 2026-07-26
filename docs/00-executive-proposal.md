@@ -67,6 +67,22 @@ These partners have a direct incentive to reduce permanent lockout and support b
 
 The first end users are people with a clear reason to care before disaster occurs: developers, administrators, password-manager customers, security-key users, and small-business owners.
 
+## Founder-led distribution advantage
+
+Domen Kožar and Cachix would lead marketing through products and communities that already serve developers. The objective is to make [SecretSpec](https://secretspec.dev/) the best secrets tool for developers: one portable declaration and policy layer across local machines, CI, production secret stores, language SDKs, and AI agents.
+
+[FactorSeal](https://github.com/domenkozar/factorseal) supplies the complementary local-security story. Its target design is a hardware-bound keyring with mandatory, backup-ready multifactor unlock: platform hardware is required alongside an authenticator, and a completed vault maintains at least two independently enrolled authenticators. FactorSeal therefore teaches the right first behavior—strong factors plus a tested backup—while ProofAgain addresses the residual disaster in which the computer and every enrolled authenticator are lost.
+
+The proposed adoption loop is:
+
+1. developers adopt SecretSpec to declare and resolve application secrets;
+2. they use FactorSeal as a secure local provider;
+3. FactorSeal makes multiple independent authenticators and their lifecycle visible;
+4. ProofAgain is offered as an optional catastrophic-recovery policy; and
+5. recovery drills, signed receipts, and rotation turn the concept into a practiced security habit.
+
+This is a credible product-led distribution channel because ProofAgain appears inside a real secret-management workflow rather than as an abstract insurance product. FactorSeal is currently an unaudited prototype and does not yet enforce its complete target policy, so the combined story is a roadmap and validation strategy, not a claim about production readiness.
+
 ## Business model
 
 The primary model is recurring protection revenue, with possible recovery-event fees for expensive verification.
@@ -98,6 +114,10 @@ The defensible asset would not be ciphertext storage alone. It would be the prot
 Authentication is becoming more secure and more device-bound, while support desks and ad hoc backup codes remain the fallback. As applications reduce password-based recovery, the gap between strong authentication and durable recovery becomes more visible.
 
 ProofAgain's opportunity is to provide a standardized final layer without converting normal account support into a bypass around strong authentication.
+
+AI agents make the identity layer more strategically important. Autonomous tools increasingly need secrets and delegated capabilities, but an agent also needs a stable answer to “which principal is acting, who controls it, what may it access, why, and how is its authority revoked or safely reissued?” SecretSpec already creates a natural policy and audit surface for agent secret access. ProofAgain can eventually extend the same continuity, approval, recovery, and audit concepts to cryptographically identified AI agents and workloads.
+
+The AI expansion should not change the initial promise or weaken its identity model. Natural people continue to use high-assurance identity proofing. AI agents would use a separate protocol profile based on cryptographic identity, workload provenance, organizational control, delegated authority, and human accountability.
 
 ## Major risks
 

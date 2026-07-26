@@ -113,14 +113,20 @@ Two-factor backup-code sets and narrowly scoped application recovery tokens fit 
 
 ## Market thesis
 
-ProofAgain is based on four hypotheses:
+ProofAgain is based on six hypotheses:
 
 - stronger and more device-bound authentication increases the importance of an independent final recovery layer;
 - applications prefer a specialized recovery network to maintaining country-specific identity and fraud operations;
 - users will enroll before a loss event when protection is bundled into a trusted application or paid plan; and
-- an open, portable protocol can support a network of differentiated providers without forcing applications to integrate each one separately.
+- an open, portable protocol can support a network of differentiated providers without forcing applications to integrate each one separately;
+- a developer-security ecosystem led by Domen Kožar and Cachix can create a lower-cost adoption path through SecretSpec and FactorSeal; and
+- identity, delegated authority, and credential continuity for AI agents will become a major adjacent infrastructure category.
 
 These hypotheses imply a B2B2C beachhead rather than a consumer-only launch. Distribution through an application is present at the moment recovery material is generated or rotated, when enrollment is most relevant.
+
+The developer wedge is unusually concrete. [SecretSpec](https://secretspec.dev/) can become the daily interface through which developers declare, resolve, and audit secrets. [FactorSeal](https://github.com/domenkozar/factorseal) can make hardware-bound, backup-ready multifactor storage the secure local default. ProofAgain then protects the exceptional case that neither product can solve alone: loss of the local platform and every enrolled authenticator.
+
+AI identity is a later expansion, not an excuse to broaden the first product. Agents and workloads need cryptographic identity and delegated organizational authority rather than government identity proof. The reusable ProofAgain assets are policy, quorum approval, lifecycle, destination-bound reissuance, revocation, continuity, and audit.
 
 ## Evidence required
 

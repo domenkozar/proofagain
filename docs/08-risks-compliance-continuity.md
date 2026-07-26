@@ -24,6 +24,7 @@ This document is a planning framework, not legal advice or a conclusion about re
 | Demand timing | Users must buy before a rare event | Application bundling and security-plan distribution | Demonstrated paid enrollment and renewal |
 | Protocol flaw | A systemic flaw can affect every object | Staging, external review, crypto agility, limited cohorts | Independent implementations and conformance |
 | Vendor dependency | Proofing, HSM, cloud, or messaging failure may halt safety controls | Multiple vendors, exit terms, documented substitution | Successful dependency-loss exercise |
+| AI identity scope creep | Agent recovery may clone authority or blur human accountability | Separate principal profile, fresh-key reissuance, explicit controllers and delegation | Independent AI threat model and bounded enterprise pilot |
 | Reputation loss | One incident can undermine the category | Conservative claims, incident transparency, user-centered remediation | Governance and funded response capacity |
 
 ## Compliance workstreams
@@ -97,6 +98,10 @@ Identity methods can fail for people with disabilities, older documents, changed
 ### Enterprise and employment
 
 Enterprise break-glass recovery must distinguish personal identity from organizational authority. Employment, role, and approval must be current at recovery time; proving that a claimant is a named employee does not prove they remain authorized.
+
+### AI agents and delegated authority
+
+A future AI identity product requires separate analysis of agent accountability, automated decisions, software and model provenance, workplace monitoring, audit, intellectual property, cross-border operation, and the authority of human or organizational controllers. ProofAgain should reissue narrow capabilities to a fresh agent identity rather than copy an old key, and it must preserve an explicit chain from every agent to current accountable principals.
 
 ### Death, incapacity, and legal representatives
 
